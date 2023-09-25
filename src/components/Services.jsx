@@ -11,7 +11,6 @@ const getAllServices = async () => {
 
 const Services = async () => {
 	const services = await getAllServices();
-	console.log(services);
 	return (
 		<div>
 			<section>

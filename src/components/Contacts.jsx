@@ -8,10 +8,10 @@ import 'react-toastify/dist/ReactToastify.css';
 const Contacts = () => {
 	// initialize state
 	const [contact, setContact] = useState({
-		fname: null,
-		lname: null,
-		email: null,
-		msg: null
+		fname: '',
+		lname: '',
+		email: '',
+		msg: ''
 	});
 
 	//input field
@@ -33,10 +33,10 @@ const Contacts = () => {
 				const res = await CREATE_CONTACT(contact);
 				if (res.data.id) {
 					setContact({
-						fname: null,
-						lname: null,
-						email: null,
-						msg: null
+						fname: '',
+						lname: '',
+						email: '',
+						msg: ''
 					});
 					notify();
 				}
@@ -86,6 +86,7 @@ const Contacts = () => {
 												name="fname"
 												placeholder="First Name"
 												onChange={(e) => inputHandler(e)}
+												value={contact.fname}
 											/>
 										</div>
 										<div className="w-full lg:w-1/2 px-2">
@@ -95,6 +96,7 @@ const Contacts = () => {
 												name="lname"
 												placeholder="Last Name"
 												onChange={(e) => inputHandler(e)}
+												value={contact.lname}
 											/>
 										</div>
 									</div>
@@ -104,6 +106,7 @@ const Contacts = () => {
 										name="email"
 										placeholder="hello@example.com"
 										onChange={(e) => inputHandler(e)}
+										value={contact.email}
 									/>
 									<textarea
 										className="mb-4 py-2 px-3 w-full bg-gray-50 rounded leading-loose"
@@ -111,6 +114,7 @@ const Contacts = () => {
 										name="msg"
 										placeholder="Message"
 										onChange={(e) => inputHandler(e)}
+										value={contact.msg}
 									/>
 
 									<button className="mb-4 py-4 w-full rounded text-sm bg-green-600 hover:bg-green-700 text-white font-bold leading-normal transition duration-200">
