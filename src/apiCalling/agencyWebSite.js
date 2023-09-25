@@ -50,3 +50,9 @@ export const GET_TESTIMONIAL_LIST = () => {
 	const url = 'api/TestimonialList';
 	return axios.get(url);
 };
+/* create contact
+method post */
+export const CREATE_CONTACT = (data) => {
+	const url = 'api/CreateContact';
+	return axios.post(url, data);
+};
